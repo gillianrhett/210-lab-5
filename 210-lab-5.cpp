@@ -18,12 +18,10 @@ int main() {
     return 0;
 }
 
-int swap(int *ptra, int *ptrb) {
-    /* original
-    int temp = a;
-    a = b;
-    b = temp;
-    return a + b;
-    */
-    return 0;
+int swap(int* ptra, int* ptrb) {
+// swap the values of 2 variables via pointers to them, and return their sum
+    int temp = *ptra;
+    *ptra = *ptrb;
+    *ptrb = temp;
+    return *ptra + *ptrb;
 }
