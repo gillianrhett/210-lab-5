@@ -5,20 +5,27 @@ using namespace std;
 int swap(int*, int*);
 
 int main() {
-    int x = 5, y = 10;
-    int *ptrx = &x;
-    int *ptry = &y;
+    int *ptrx = new int;
+    int *ptry = new int;
+    *ptrx = 5;
+    *ptry = 10;
 
-    cout << "x = " << x << "  | y = " << y << endl;
+    cout << "x = " << *ptrx << "  | y = " << *ptry << endl;
 
     cout << "Swapping...\n";
     int sum = swap(ptrx, ptry);
-    cout << "x = " << x << " | y = " << y << endl;
+    cout << "x = " << *ptrx << " | y = " << *ptry << endl;
     cout << "sum = " << sum << endl;
+
+    delete ptrx;
+    ptrx = nullptr;
+    delete ptry;
+    ptry = nullptr;
+
     return 0;
 }
 
-int swap(int* ptra, int* ptrb) {
+int swap(int *ptra, int *ptrb) {
 // swap the values of 2 variables via pointers to them, and return their sum
     int temp = *ptra;
     *ptra = *ptrb;
